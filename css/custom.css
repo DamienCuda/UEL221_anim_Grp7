@@ -1,0 +1,135 @@
+/*Smooth scroll pour éviter l'effet snap des ancres*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*La navBar apparait au click et est géré en JS*/
+/*Changement de couleur et animation shake sur les liens de la navBar*/
+#navBar ul li {
+    transition: transform 350ms ease-in-out;
+}
+#navBar ul li:hover {
+    animation: shake 150ms 2 linear;
+}
+#navBar ul li a{
+    text-decoration: none;
+}
+#navBar ul li a:hover{
+    color: #10cab7;
+}
+
+@keyframes shake {
+    0% {
+      transform: translate(4px, 0);
+    }
+    50% {
+      transform: translate(-4px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+}
+
+/*Effet d'agrandissement au hover des cartes de la première section*/
+.square {
+    background-color: white;
+    border-radius: 8px;
+    transition: all 350ms ease-in-out;
+}
+.square:hover {
+    box-shadow: 0px 0px 150px #615f5f;
+    transform: scale(103%);
+}
+
+/*Effet d'agrandissement au hover des cartes et changement opacité du portfolio*/
+.portfolio-item {
+    opacity: 0.8;
+    transition: transform 350ms ease-in-out;
+}
+.portfolio-item:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*Changement de couleur de la forme deriière l'image de la section service*/
+#service_img{
+    cursor: pointer;
+}
+#service_shape{
+    transition: background-color 400ms ease-in-out;
+}
+#service_img:hover + #service_shape{
+    background-color: #10cab7;
+}
+
+/*Effet de flip sur l'image de la section about*/
+#flip_container{
+    perspective: 1000px;
+}
+#img_flip{
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+#img_flip:hover{
+    transform: rotateY(360deg) ;
+}
+
+/*Création d'un after avec effet de d'apparition de côté au hover*/
+#buttonmore {
+    text-decoration: none;
+    position: relative;
+    border: 1px solid black;
+    background: transparent;
+}
+#buttonmore::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: all .35s;
+    z-index: -1;
+}
+#buttonmore:hover:after {
+    width: 100%;
+    background: #10cab7;
+}
+#buttonmore:hover {
+    color: white;
+    z-index: 1;
+}
+
+/*Apparition d'un curseur "main" et d'une animation pulse*/
+#mail {
+    cursor: pointer;
+}
+#mail:hover {
+    animation: pulse 1s;
+}
+  
+@keyframes pulse {
+    0% {
+        transform: scale(.85);
+    }
+    70% {
+        transform: scale(1);
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 20px #10cab7,
+            0 0 30px #10cab7;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: none;
+    }
+}
+
+/*Effet de rotate sur les icônes de réseau sociaux*/
+.icones{
+    transition: all 200ms ease-in-out;
+}
+.icones:hover{
+    transform: rotate(360deg);
+}
