@@ -1,0 +1,67 @@
+#main_title_container{
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+#main_title{
+    transition: all 0.5s ease-in-out;
+}
+
+#main_title:hover{
+    translate: 0 30px 80px;
+    text-shadow:
+        1px 1px 00px #10cab7,
+        2px 2px 00px #14b1a1,
+        3px 3px 00px #159487,
+        4px 4px 00px #0d8d80,
+        20px 20px 10px #87888857;
+}
+
+/*Effet de flip sur les titres de section*/
+
+.title_container{
+transform-style: preserve-3d;
+perspective: 500px;
+}
+.p_forwards{
+    perspective :700px;
+}
+.letter{
+    opacity: 0.9;
+    transition: all 0.5s ease-in-out;
+}
+
+.title:has(.title_container) .letter.one{
+    animation: flip_letter 1.5s alternate forwards;
+}
+.title:has(.title_container) .letter.two{
+    animation: flip_letter 1.5s 0.2s alternate forwards;
+}
+.title:has(.title_container) .letter.three{
+    animation: flip_letter 1.5s 0.4s alternate forwards;
+}
+.title:has(.title_container) .letter.four{
+    animation: flip_letter 1.5s 0.6s alternate forwards;
+}
+.title:has(.title_container) .letter.five{
+    animation: flip_letter 1.5s 0.8s alternate forwards;
+}
+.title:has(.title_container) .letter.six{
+    animation: flip_letter 1.5s 1s alternate forwards;
+}
+.title:has(.title_container) .letter.seven{
+    animation: flip_letter 1.5s 1.3s alternate forwards;
+}
+.title:has(.title_container) .letter.eight{
+    animation: flip_letter 1.5s 1.6s alternate forwards;
+}
+.title:has(.title_container) .letter.nine{
+    animation: flip_letter 1.5s 1.9s alternate forwards;
+}
+
+@keyframes flip_letter {
+    to {
+        color: #10cab7;
+        transform-origin: top;
+        transform: rotateX(360deg);
+    }
+}

@@ -66,12 +66,14 @@ html {
 #flip_container{
     perspective: 1000px;
 }
-#img_flip{
-    transition: transform 1s;
+#img_flip_container{
     transform-style: preserve-3d;
 }
-#img_flip:hover{
-    transform: rotateY(360deg) ;
+#img_flip{
+    transition: transform 1.5s;
+}
+#flip_container:hover #img_flip{
+    transform: rotateY(360deg);
 }
 
 /*Création d'un after avec effet de d'apparition de côté au hover*/
@@ -126,10 +128,24 @@ html {
     }
 }
 
-/*Effet de rotate sur les icônes de réseau sociaux*/
-.icones{
-    transition: all 200ms ease-in-out;
+/*Animation shakeIcone sur les tag <i>*/
+i{
+    transition: transform 350ms ease-in-out;
 }
-.icones:hover{
-    transform: rotate(360deg);
+i:hover{
+    animation: shakeIcone 150ms 2 linear;
 }
+
+
+@keyframes shakeIcone {
+    0% {
+      rotate : 10deg;
+    }
+    50% {
+        rotate : 0deg;
+    }
+    100% {
+        rotate : -10deg;
+    }
+}
+
