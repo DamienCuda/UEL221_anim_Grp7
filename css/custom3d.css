@@ -1,3 +1,21 @@
+#main_title_container{
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+#main_title{
+    transition: all 0.5s ease-in-out;
+}
+
+#main_title:hover{
+    translate: 0 30px 80px;
+    text-shadow:
+        1px 1px 00px #10cab7,
+        2px 2px 00px #14b1a1,
+        3px 3px 00px #159487,
+        4px 4px 00px #0d8d80,
+        20px 20px 10px #87888857;
+}
+
 /*Effet de flip sur les titres de section*/
 
 .title_container{
@@ -5,7 +23,7 @@ transform-style: preserve-3d;
 perspective: 500px;
 }
 .p_forwards{
-    transform: perspective(700px);
+    perspective :700px;
 }
 .letter{
     opacity: 0.9;
