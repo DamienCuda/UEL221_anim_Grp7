@@ -8,7 +8,7 @@
 }
 
 #main_title:hover{
-    translate: 0 30px 80px;
+    translate: 0 30px 100px;
     text-shadow:
         1px 1px 00px #10cab7,
         2px 2px 00px #14b1a1,
@@ -16,6 +16,65 @@
         4px 4px 00px #0d8d80,
         20px 20px 10px #87888857;
 }
+
+/*L'image de la section service est animé l'orsqu'elle entre dans le viewport de l'utilisateur*/
+.service_img_container{
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+
+#service_img, #service_shape, #service_img img{
+    transition: all 0.5s ease-in-out;
+}
+
+.service_img_container > div {
+    animation: skew_div 2.5s linear forwards;
+}
+.service_img_container #service_img {
+    animation: skew_div 2.5s linear forwards, pop_up 1s linear 1s forwards;
+}
+.service_img_container #service_img img {
+    animation: box_shadow 1s linear 1s forwards;
+}
+
+@keyframes skew_div {
+    0%{
+        transform: skew(0) rotateX(0);
+    }
+    25%{
+        transform: skew(-20deg) rotateX(30deg);
+    }
+    75%{
+        transform: skew(-20deg) rotateX(30deg);
+    }
+    100%{
+        transform: skew(0) rotateX(0);
+    }
+}
+@keyframes pop_up {
+    to{
+        translate :none ;
+    }
+    50%{
+        translate : 0 -40px ;
+    }
+    100%{
+        translate : none;
+    }
+}
+@keyframes box_shadow {
+    50%{
+        box-shadow:
+            15px 15px 0px #2c4755c0,
+            25px 25px 0px #3f718ac5,
+            35px 35px 0px #17746bb6,
+            45px 45px 0px #10cab7b2;
+    }
+    100%{
+        box-shadow: none;
+    }
+}
+
 
 /*Effet de flip sur les titres de section*/
 .title_container{
