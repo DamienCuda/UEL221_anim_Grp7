@@ -78,7 +78,7 @@ html {
 #buttonmore {
     text-decoration: none;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid rgb(59, 59, 59);
     background: transparent;
 }
 #buttonmore::after {
