@@ -51,17 +51,6 @@ html {
     transform: scale(1.1);
 }
 
-/*Changement de couleur de la forme deriière l'image de la section service*/
-#service_img{
-    cursor: pointer;
-}
-#service_shape{
-    transition: background-color 400ms ease-in-out;
-}
-#service_img:hover + #service_shape{
-    background-color: #10cab7;
-}
-
 /*Effet de flip sur l'image de la section about*/
 #flip_container{
     perspective: 1000px;

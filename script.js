@@ -22,5 +22,11 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         observer.observe( element );
     });
+    
+    var target_service_image = document.querySelector('.target_service_image');
+    let target_service_image_observer = new IntersectionObserver(entries => {
+        target_service_image.classList.toggle( 'service_img_container', entries[0].isIntersecting );
+    });
+    target_service_image_observer.observe( target_service_image );
 
 });
