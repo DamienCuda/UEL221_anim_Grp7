@@ -1,3 +1,4 @@
+/*Effet 3d titre principal*/
 #main_title_container{
     transform-style: preserve-3d;
     perspective: 500px;
@@ -17,7 +18,6 @@
 }
 
 /*Effet de flip sur les titres de section*/
-
 .title_container{
 transform-style: preserve-3d;
 perspective: 500px;
