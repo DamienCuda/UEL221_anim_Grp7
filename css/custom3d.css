@@ -17,6 +17,20 @@
         20px 20px 10px #87888857;
 }
 
+/*Effet de flip sur l'image de la section about*/
+#flip_container{
+    perspective: 1000px;
+}
+#img_flip_container{
+    transform-style: preserve-3d;
+}
+#img_flip{
+    transition: transform 1.5s;
+}
+#flip_container:hover #img_flip{
+    transform: rotateY(360deg);
+}
+
 /*L'image de la section service est animé l'orsqu'elle entre dans le viewport de l'utilisateur*/
 .service_img_container{
     transform-style: preserve-3d;
@@ -75,20 +89,25 @@
     }
 }
 
-
-/*Effet de flip sur les titres de section*/
+/*Effet de flip sur les titres de section Portfolio et Contact*/
 .title_container{
 transform-style: preserve-3d;
 perspective: 500px;
 }
 .p_forwards{
-    perspective :700px;
+    perspective :700px; /*Une perspective est ajouté pour que les sous-titres restent deant le titre suite à la modification du staking context*/
 }
 .letter{
     opacity: 0.9;
     transition: all 0.5s ease-in-out;
 }
 
+/*
+L'animation est ajouté à chaque lettres avec un delay pour donner l'effet recherché
+Nous sommes bien conscient que sémantiquement la multiplication des H6 n'est pas recommandée.
+Dans un contexte de production une autre approche serait nécessaire
+(peut-être l'utilisation de span avec une classe particulière à l'intérieur d'un H6 et aria-label pour l'accessibilité)
+*/
 .title:has(.title_container) .letter.one{
     animation: flip_letter 1.3s alternate forwards;
 }
