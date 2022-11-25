@@ -51,20 +51,6 @@ html {
     transform: scale(1.1);
 }
 
-/*Effet de flip sur l'image de la section about*/
-#flip_container{
-    perspective: 1000px;
-}
-#img_flip_container{
-    transform-style: preserve-3d;
-}
-#img_flip{
-    transition: transform 1.5s;
-}
-#flip_container:hover #img_flip{
-    transform: rotateY(360deg);
-}
-
 /*Création d'un after avec effet de d'apparition de côté au hover*/
 #buttonmore {
     text-decoration: none;
