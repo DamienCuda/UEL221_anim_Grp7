@@ -14,6 +14,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet" />
     <link href="css/custom3d.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
     <script src="script.js" defer></script>
   </head>
   <body class="lang-en">
@@ -239,7 +240,7 @@
         </div>
       </div>
     </section>
-<!-- Contact -->
+    <!-- Contact -->
     <section id="five" class="contact">
       <div class="container">
         <div class="row">
@@ -269,6 +270,69 @@
           </div>
         </div>
       </div>
+    </section>
+    <!-- Postuler -->
+    <section id="form_UE_L221">
+      <div class="container">
+        <div class="row" id="form_title">
+          <div class="title">
+            <h6>postuler</h6>
+            <p>Nos formations vous attendent</p>
+          </div>
+        </div>
+        <div class="row" id="form_row">
+          <form id="form_container" class="col-12 mb-5">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group mb-4 d-flex flex-column">
+                  <label class="form-label" for="nom">Nom</label>
+                  <input type="text" name="nom" required>
+                </div>
+                <div class="form-group mb-4 d-flex flex-column">
+                  <label class="form-label" for="email">E-mail</label>
+                  <input type="mail" name="email" required>
+                </div>
+                <div class="form-group mb-4 d-flex flex-column">
+                  <label class="form-label" for="formations">Quelle formation ?</label>
+                  <select class="form-select" name="formations" aria-label="Default select example" required>
+                    <option selected>Nos formations</option>
+                    <option value="deust">DEUST</option>
+                    <option value="licence">Licence</option>
+                    <option value="master">Master</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-6 px-4">
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+                </div>
+                <div class="form-group mb-4">
+                  <button id="form_btn" class="btn btn-outline-success btn-md" type="button">Envoyer</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div id="form_launcher_container">
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="text-center">
+                  <div class="font-weight-bold h3">Nos formations allant du DEUST au Master sont accessibles en présentiel ou 100% à distance.</div>
+                  <h5 class="h5 mb-1">Si vous souhaitez postuler</h5>
+                  <button id="form_launcher_btn" class="btn btn-outline-success btn-lg">Appuyez</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="form_thanx" class="col-12 mb-4">
+            <div class="text-center">
+              <div class="font-weight-bold h3">Merci.</div>
+              <h5 class="h5 mb-1">Nous vous contacterons dès que possible</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   <!-- Footer -->
     <section class="footer">

@@ -1,0 +1,71 @@
+/*modifiacation outline pour matcher le thème*/
+input:focus, #message:focus {
+outline: 1px solid #10cab785;
+}
+#form_btn, #form_launcher_btn{
+border: 1px solid #10cab7;
+color: #10cab7;
+}
+#form_btn:hover, #form_launcher_btn:hover{
+background-color: #10cab7;
+color: white;
+}
+/*Taille des labels et select */
+label{
+font-size: 1.2rem;
+padding-bottom: 0.8rem;
+font-weight: 800;
+}
+select{
+font-size: 1.1rem;
+}
+.form-group{
+width: 75%;
+margin-inline: auto;
+}
+.form-group > button{
+margin-left: auto;
+}
+
+/*Positionnement style et animation section formulaire */
+#form_UE_L221{
+    height: 650px;
+}
+#form_row{
+    position: relative;
+}
+#form_container, #form_launcher_container, #form_thanx{
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+#form_thanx{
+    opacity: 0;
+}
+#form_thanx.show{
+    opacity: 1;
+}
+#form_container{
+    translate : -150%;
+    padding: 2rem 1.5rem;
+    border: 1px solid #10cab7;
+    border-radius: 10px;
+}
+#form_container.appear{
+    animation: form_appear linear 0.8s forwards;
+}
+#form_launcher_container.hidden{
+    opacity: 0;
+}
+
+@keyframes form_appear {
+    30%{
+        translate : 40px;
+    }
+    80%{
+        translate : -40px;
+    }
+    100%{
+        translate : 0;
+        z-index: 1;
+    }
+}
