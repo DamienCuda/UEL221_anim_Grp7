@@ -1,71 +1,156 @@
-/*modifiacation outline pour matcher le thème*/
-input:focus, #message:focus {
-outline: 1px solid #10cab785;
+/*Partie titre de la section*/
+
+
+/*PARTIE FORMULAIRE*/
+#form_title, #subtitle{
+    text-align: center;
 }
-#form_btn, #form_launcher_btn{
-border: 1px solid #10cab7;
-color: #10cab7;
+#subtitle{
+    width: 60%;
+    margin-inline: auto;
 }
-#form_btn:hover, #form_launcher_btn:hover{
-background-color: #10cab7;
-color: white;
+#subtitle p{
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 2.5rem;
 }
-/*Taille des labels et select */
+/*Le formulaire*/
+#form_container{
+    display: flex;
+    justify-content: center;
+}
+form{
+    margin-block: 1rem;
+    padding-block: 2rem;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: center;
+}
+/*Les colonnes du formulaire*/
+#form_left_col, #form_rigth_col, #message_container{
+    gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/*Les label et éléments spécifique du formulaire*/
 label{
-font-size: 1.2rem;
-padding-bottom: 0.8rem;
-font-weight: 800;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
 }
 select{
-font-size: 1.1rem;
+    font-size: 1.1rem;
 }
-.form-group{
-width: 75%;
-margin-inline: auto;
+#select_container{
+    color: #aaa;
 }
-.form-group > button{
-margin-left: auto;
+#message_container textarea{
+    resize: none;
+}
+#rgpd_container{
+    display: flex;
+    margin-top: 0.5rem;
+}
+#rgpd_container label{
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 4;
+    padding-bottom: 0px;
 }
 
-/*Positionnement style et animation section formulaire */
-#form_UE_L221{
-    height: 650px;
-}
-#form_row{
+/*Placement et animation des label du formulaire au focus*/
+.form_group{
     position: relative;
 }
-#form_container, #form_launcher_container, #form_thanx{
+#name_container label, #email_container label, #message_container label{
     position: absolute;
-    transition: all 0.5s ease-in-out;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: 0.4s ease-out;
 }
-#form_thanx{
-    opacity: 0;
+#name_container input, #email_container input, #message_container textarea, #select_container select{
+    display: block;
+    padding: 0.5rem 0;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #aaa;
+    transition: 0.4s ease-out;
 }
-#form_thanx.show{
-    opacity: 1;
+.form_group:focus-within label, .form_group#message_container:focus-within label{
+    top: 0;
+    translate: 0 -100%;
 }
-#form_container{
-    translate : -150%;
-    padding: 2rem 1.5rem;
-    border: 1px solid #10cab7;
-    border-radius: 10px;
+.form_group#name_container:focus-within input, .form_group#email_container:focus-within input, .form_group#message_container:focus-within textarea{
+    border-bottom: 1px solid #10cab7;
 }
-#form_container.appear{
-    animation: form_appear linear 0.8s forwards;
-}
-#form_launcher_container.hidden{
-    opacity: 0;
+.form_group#name_container:focus-within label, .form_group#email_container:focus-within label, .form_group#message_container:focus-within label{
+    color: #10cab7;
 }
 
-@keyframes form_appear {
-    30%{
-        translate : 40px;
-    }
-    80%{
-        translate : -40px;
-    }
-    100%{
-        translate : 0;
-        z-index: 1;
-    }
+
+/*Stylisation des boutons de la class form_btn*/
+a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page*/
+    text-decoration: none;
 }
+.form_btn{
+    border: 1px solid #10cab7;
+    color: #10cab7;
+    background-color: transparent;
+    border-radius: 50vh;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-image: linear-gradient(to right, transparent 50%, #10cab7 50%);
+    background-size: 200%;
+    transition: 0.4s ease-out;
+}
+.form_btn:hover{
+    background-position: 100%;
+    color: white;
+}
+/*POur enlever la bordure au clique*/
+.form_btn:focus{
+    outline: none;
+}
+
+/*PARTIE VIDEO*/
+#video_container{
+    margin-bottom: 3rem;
+    padding: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+}
+#button2_container{
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 3000px;
+    width: 100%;
+}
+#button2_container:before{
+    position: absolute;
+    content: url(../img/about.jpg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    transform-origin: left;
+    border-left: 1px solid rgb(196, 192, 192);
+}
+.left#button2_container::before{
+    transform: rotatey(-180deg);
+    transition: all 1.5s ease-in-out;
+}
+

@@ -29,22 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     target_service_image_observer.observe( target_service_image );
 
+});
+
 
 //Observation des boutons du formulaire
-    var form_launcher_btn = document.querySelector('#form_launcher_btn');
-    var form_launcher_container = document.querySelector('#form_launcher_container');
-    var form_container = document.querySelector('#form_container');
-    var form_btn = document.querySelector('#form_btn');
-    var form_thanx = document.querySelector('#form_thanx');
-
-
-    form_launcher_btn.addEventListener('click', () => {
-        form_launcher_container.classList.toggle('hidden');
-        form_container.classList.toggle('appear');
-    })
-    form_btn.addEventListener('click', () => {
-        form_container.classList.toggle('appear');
-        form_thanx.classList.toggle('show');
-    })
-
-});
