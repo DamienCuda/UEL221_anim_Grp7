@@ -65,6 +65,7 @@ select{
 .form_group{
     position: relative;
 }
+/*Certains label sont dépalcé pour apparaitre comme s'ils étaient dans l'input*/
 #name_container label, #email_container label, #message_container label{
     position: absolute;
     top: 50%;
@@ -73,6 +74,7 @@ select{
     color: #aaa;
     transition: 0.4s ease-out;
 }
+/*Les input sont presque remis à zéro*/
 #name_container input, #email_container input, #message_container textarea, #select_container select{
     display: block;
     padding: 0.5rem 0;
@@ -82,6 +84,7 @@ select{
     border-bottom: 1px solid #aaa;
     transition: 0.4s ease-out;
 }
+/*Certains label sont translaté au focus sur l'input permettant l'effet de mouvement du label*/
 .form_group:focus-within label, .form_group#message_container:focus-within label{
     top: 0;
     translate: 0 -100%;
@@ -121,6 +124,7 @@ a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page
 }
 
 /*PARTIE VIDEO*/
+/*Le container est stylisé et un display grid permet de créer les colonnes et de palcer les éléménts au centre*/
 #video_container{
     margin-bottom: 3rem;
     padding: 2rem;
@@ -136,6 +140,7 @@ a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page
     perspective: 3000px;
     width: 100%;
 }
+/*before du container est utilisé pour cacher la vidéo et le bouton 2. Il accueille l'image pour être raccord avec le reste du thème*/
 #button2_container:before{
     position: absolute;
     content: url(../img/about.jpg);
@@ -149,7 +154,8 @@ a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page
     transform-origin: left;
     border-left: 1px solid rgb(196, 192, 192);
 }
-.left#button2_container::before{
+/*Une simple trnasition sur Y associé à un trandform-origin permet l'effet de page qui cache le bouton 1 et révèle le reste*/
+.left#button2_container:before{
     transform: rotatey(-180deg);
     transition: all 1.5s ease-in-out;
 }

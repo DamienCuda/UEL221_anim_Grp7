@@ -36,12 +36,11 @@ document.addEventListener('DOMContentLoaded', function(){
     button2_container.appendChild(video);
     button2_container.appendChild(form_btn_container);
 
-
+    //O, ajoute le bouton 1 et la div avec la vidéo et le bouton 2 au conteneur principal
     video_container.appendChild(button1);
     video_container.appendChild(button2_container);
 
-
-    
+    //On ecoute le clique des boutons en ajoutant ou enlevant une classe
     var video_show_btn = document.querySelector('#button1');
     var video_close_btn_container = document.querySelector('#button2_container');
     var video_close_btn = document.querySelector('#button2');
