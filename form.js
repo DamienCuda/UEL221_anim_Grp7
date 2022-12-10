@@ -1,45 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-    //On séléctionne le conteneur principal
-    var video_container = document.querySelector('#video_container');
-
-    //On crée deux éléments button avec leur id, class et attributs
-    var button1 = document.createElement('button');
-    button1.setAttribute('id', 'button1');
-    button1.setAttribute('type', 'button');
-    button1.classList.add('form_btn');
-    button1.innerText = 'Découvrez nos formations';
-
-    var button2 = document.createElement('button');
-    button2.setAttribute('id', 'button2');
-    button2.setAttribute('type', 'button');
-    button2.classList.add('form_btn');
-    button2.innerText = 'Retour';
-
-    //On crée un élément video avec ses attibuts
-    var video = document.createElement('video');
-    video.setAttribute('controls', null);
-    video.setAttribute('src', 'http://tecfa.unige.ch/guides/html/html5-video/videos/state-of-wikipedia-480x272.ogv');
-
-    //On crée une div qui acueilllera la video et le bouton2
-    var button2_container = document.createElement('div');
-    button2_container.setAttribute('id', 'button2_container');
-
-    //O, crée une div qui acueilllera le bouton2
-    var form_btn_container = document.createElement('div');
-    form_btn_container.classList.add('form_btn_container');
-
-
-    form_btn_container.appendChild(button2);
-
-    //On ajoute les élément video et bouton à la div
-    button2_container.appendChild(video);
-    button2_container.appendChild(form_btn_container);
-
-    //O, ajoute le bouton 1 et la div avec la vidéo et le bouton 2 au conteneur principal
-    video_container.appendChild(button1);
-    video_container.appendChild(button2_container);
-
     //On ecoute le clique des boutons en ajoutant ou enlevant une classe
     var video_show_btn = document.querySelector('#button1');
     var video_close_btn_container = document.querySelector('#button2_container');
@@ -51,4 +11,30 @@ document.addEventListener('DOMContentLoaded', function(){
     video_close_btn.addEventListener('click', () => {
         video_close_btn_container.classList.toggle('left');
     })
+
+    //On ecoute la valeur des inputs pour ajouter une classe s'il ne sont pas vide
+    var name_container = document.querySelector('#name_container');
+    var email_container = document.querySelector('#email_container');
+    var message_container = document.querySelector('#message_container');
+
+    var name_container_input = document.querySelector('#name_container input');
+    var email_container_input = document.querySelector('#email_container input');
+    var message_container_input = document.querySelector('#message_container textarea');
+
+    name_container_input.addEventListener('input', () => {
+        if (name_container_input.value != ""){
+            name_container.classList.add('valid');
+        }
+    })
+    email_container_input.addEventListener('input', () => {
+        if (email_container_input.value != ""){
+            email_container.classList.add('valid');
+        }
+    })
+    message_container_input.addEventListener('input', () => {
+        if (message_container_input.value != ""){
+            message_container.classList.add('valid');
+        }
+    })
+
 });

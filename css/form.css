@@ -1,39 +1,5 @@
-/*Partie titre de la section*/
+/* Partie titre de la section */
 
-
-/*PARTIE FORMULAIRE*/
-#form_title, #subtitle{
-    text-align: center;
-}
-#subtitle{
-    width: 60%;
-    margin-inline: auto;
-}
-#subtitle p{
-    font-size: 1.7rem;
-    font-weight: 800;
-    line-height: 2.5rem;
-}
-/*Le formulaire*/
-#form_container{
-    display: flex;
-    justify-content: center;
-}
-form{
-    margin-block: 1rem;
-    padding-block: 2rem;
-    width: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 40%);
-    justify-content: center;
-}
-/*Les colonnes du formulaire*/
-#form_left_col, #form_rigth_col, #message_container{
-    gap: 0.3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
 /*Les label et éléments spécifique du formulaire*/
 label{
     display: block;
@@ -62,10 +28,10 @@ select{
 }
 
 /*Placement et animation des label du formulaire au focus*/
-.form_group{
+.form-group{
     position: relative;
 }
-/*Certains label sont dépalcé pour apparaitre comme s'ils étaient dans l'input*/
+/*Certains label sont déplacé pour apparaitre comme s'ils étaient dans l'input*/
 #name_container label, #email_container label, #message_container label{
     position: absolute;
     top: 50%;
@@ -85,17 +51,20 @@ select{
     transition: 0.4s ease-out;
 }
 /*Certains label sont translaté au focus sur l'input permettant l'effet de mouvement du label*/
-.form_group:focus-within label, .form_group#message_container:focus-within label{
+.form-group:focus-within label, .form-group#message_container:focus-within label{
     top: 0;
     translate: 0 -100%;
 }
-.form_group#name_container:focus-within input, .form_group#email_container:focus-within input, .form_group#message_container:focus-within textarea{
+.form-group.valid label, .form-group#message_container.valid label{
+    top: 0;
+    translate: 0 -100%;
+}
+.form-group#name_container:focus-within input, .form-group#email_container:focus-within input, .form-group#message_container:focus-within textarea{
     border-bottom: 1px solid #10cab7;
 }
-.form_group#name_container:focus-within label, .form_group#email_container:focus-within label, .form_group#message_container:focus-within label{
+.form-group#name_container:focus-within label, .form-group#email_container:focus-within label, .form-group#message_container:focus-within label{
     color: #10cab7;
 }
-
 
 /*Stylisation des boutons de la class form_btn*/
 a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page*/
@@ -118,27 +87,20 @@ a.form_btn{ /*Ce bouton est modifié pour être identique aux autres sur la page
     background-position: 100%;
     color: white;
 }
-/*POur enlever la bordure au clique*/
+/*Pour enlever la bordure au clique*/
 .form_btn:focus{
     outline: none;
 }
 
 /*PARTIE VIDEO*/
-/*Le container est stylisé et un display grid permet de créer les colonnes et de palcer les éléménts au centre*/
-#video_container{
-    margin-bottom: 3rem;
-    padding: 2rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-}
+
 #button2_container{
     position: relative;
     text-align: center;
     transform-style: preserve-3d;
     perspective: 3000px;
     width: 100%;
+    height: max-content;
 }
 /*before du container est utilisé pour cacher la vidéo et le bouton 2. Il accueille l'image pour être raccord avec le reste du thème*/
 #button2_container:before{

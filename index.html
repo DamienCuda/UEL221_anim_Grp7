@@ -272,52 +272,64 @@
         </div>
       </div>
     </section>
-    <!-- Postuler -->
-    <section id="form_UE_L221">
-      <div id="form_title" class="title">
-        <h6>postuler</h6>
-        <p>Nos formations vous attendent</p>
+    <!-- Postuler-->
+    <section id="form_UE_L221" class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <div id="form_title" class="title">
+            <h6>postuler</h6>
+            <p>Nos formations vous attendent</p>
+          </div>
+          <div id="subtitle" class="contact-info">
+            <h2 class="h1">Nos formations allant du DEUST au Master sont accessibles en présentiel ou 100% à distance.</h2>
+          </div>
+        </div>
       </div>
-      <div id="subtitle">
-        <p>Nos formations allant du DEUST au Master sont accessibles en présentiel ou 100% à distance.</p>
-      </div>
-      <div id="form_container">
-        <form>
-          <div id="form_left_col">
-            <div class="form_group" id="name_container">
+        <form id="form_container" class="row my-4 py-4">
+          <div id="form_left_col" class="col-6">
+            <div class="form-group" id="name_container">
               <label for="nom">Nom</label>
               <input type="text" name="nom" required>
             </div>
-            <div class="form_group" id="email_container">
+            <div class="form-group" id="email_container">
               <label for="email">E-mail</label>
               <input type="mail" name="email" required>
             </div>
             <div id="select_container">
               <label for="formations">Quelle formation ?</label>
-              <select name="formations" aria-label="Default select example" required>
-                <option selected>Nos formations</option>
+              <select name="formations" class="form-select" aria-label="Default select example" required="">
+                <option selected="">Nos formations</option>
                 <option value="deust">DEUST</option>
                 <option value="licence">Licence</option>
                 <option value="master">Master</option>
               </select>
             </div>
           </div>
-          <div id="form_rigth_col">
-            <div class="form_group" id="message_container">
+          <div id="form_rigth_col" class="col-6">
+            <div class="form-group" id="message_container">
               <label for="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <textarea name="message" id="message" rows="4" required></textarea>
             </div>
             <div id="rgpd_container">
               <input type="checkbox" name="rgpd" id="rgpd_check">
               <label for="rgpd">Accepter les conditions d'utilisations</label>
             </div>
-            <div class="form_btn_container">
+            <div class="form_btn_container text-center mt-3">
               <button class="form_btn" type="submit">Envoyer</button>
             </div>
           </div>
         </form>
-      </div>
-      <div id="video_container">
+
+      <div id="video_container" class="row my-4 py-4">
+        <div class="col-6 text-center my-auto">
+          <button id="button1" type="button" class="form_btn">Découvrez nos formations</button>
+        </div>
+        <div id="button2_container" class="col-6 text-center">
+          <video controls="null" src="http://tecfa.unige.ch/guides/html/html5-video/videos/state-of-wikipedia-480x272.ogv"></video>
+          <div class="form_btn_container">
+            <button id="button2" type="button" class="form_btn">Retour</button>
+          </div>
+        </div>
       </div>
     </section>
   <!-- Footer -->
